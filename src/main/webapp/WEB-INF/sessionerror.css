@@ -1,0 +1,207 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+#boy {
+	height: 150px;
+	width: auto;
+    display: inline-block;
+    animation: hurueru .1s  infinite;
+    margin-left: 150px;
+}
+
+@keyframes hurueru {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(2px, 2px) rotateZ(1deg)}
+    50% {transform: translate(0px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
+@keyframes yurayura {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(45deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-45deg); }
+        100% { transform: rotate(0deg); }
+    }
+ 
+    #girl {
+        animation: yurayura 0.5s linear infinite;
+        height: 150px;
+        width: auto;
+        text-align: center;
+        margin-left: 150px;
+    }
+    
+    @keyframes moveimg {
+        0% { left: 150px; top: 50px;}
+        25%{ left:700px; top:450px;}
+        50% { left: 450px; top:900px;}
+        75%{ left: 20px; top: 500px;}
+        100% { left: 150px; top: 50px; }
+    }
+ 
+    #ken2{
+        animation: moveimg 0.5s infinite;
+        position: relative;
+        height: 50px;
+        width: auto;
+    }
+    
+    @keyframes right{
+  0%{
+    transform: translateX(-400px);
+  }
+  100%{
+    transform: translateX(2500px);
+  }
+}
+
+
+#ken{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  height: 50px;
+  width: auto;
+  animation: right 1s .2s ease-out infinite alternate;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* add default color for animation start  */
+
+
+/* toggle this class */
+
+.color-bg-start {
+  background-color: salmon;
+}
+
+
+/* toggle class bg-animate-color */
+
+.bg-animate-color {
+  animation: random-bg .5s linear infinite;
+}
+
+
+/* add animation to bg color  */
+
+@keyframes random-bg {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+input[type="submit"] {
+  /* change bg color to get different hues    */
+  background-color: salmon;
+  color: white;
+  padding: 2em 3em;
+  border: none;
+  transition: all .3s ease;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: none;
+  align-self: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  animation: random-bg .5s linear infinite, grow 1300ms ease infinite;
+}
+
+.start-fun {
+  background-color: #fff !important;
+  /* change color of button text when fun is started   */
+  color: salmon !important;
+}
+
+/* pulsating effect on button */
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+#ken3{
+  animation: zoomIn 7s infinite;
+}
+ 
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  99% {
+    opacity: 1;
+    transform: scale(3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
+
+.heri{
+		animation: move 3s linear infinite;
+	height: 150px;
+        width: auto;
+        position: relative;
+	
+}
+
+
+#heri{
+animation: yurayura 1s linear infinite;
+height: 150px;
+        width: auto;
+        position: relative;
+}
+
+
+
+
+
+@keyframes move {
+        0% { left: 800px; top: -1300px;}
+        100% { left: 800px; top: 200px; }
+    }
+
+@keyframes yurayura {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(90deg); }
+        50% { transform: rotate(180deg); }
+        75% { transform: rotate(270deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    

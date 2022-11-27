@@ -1,0 +1,37 @@
+@charset "UTF-8";
+.box{
+width:200px;
+margin-right: auto;
+margin-left : auto;
+margin-bottom: auto;
+height: 150px;
+}
+body {
+background-image: url(bg3.png);
+background-attachment: fixed;
+}
+h1{
+text-align: center;
+color: black;
+padding-top: 50px;
+}
+input[type="submit"]{
+width: 100%;
+text-align: center;
+  margin-right: auto;
+  margin-bottom: 5px;
+	margin-left : auto;
+	margin-top: 10px;
+ /* max-width: 600px; */
+  padding: 30px 15px 30px 15px;
+  color: black;
+  font-size: 19px;
+  background-color: #d3d3d3; /* 背景色 */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* 薄い影 */
+}

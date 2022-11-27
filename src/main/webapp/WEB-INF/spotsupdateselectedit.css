@@ -1,0 +1,107 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+   background-image: url(bg3.png);
+   background-attachment: fixed;
+   height: 100%; 
+   width:1200px;
+margin-right: auto;
+margin-left : auto;
+margin-bottom: auto;
+text-align: center;
+}
+h1{
+text-align: center;
+color: black;
+padding-top: 70px;
+}
+
+h2{
+text-align: center;
+color: black;
+padding-top: 70px;
+}
+
+p{
+	color: black;
+}
+
+input[type="text"]{
+margin: 20px 0 20px 0;
+padding-bottom: 10px;
+padding-left: 5px;
+ height: calc( 2.0em * 1 );
+  line-height: 2.0;
+  font-size: 15px;
+width: 18em;
+transition: all .6s ease;
+border-bottom:1px solid #000000;
+border-right:none;
+border-left:none;
+border-top:none;
+border-radius:0px;
+    background: rgba(255,0,0,0.0);
+}
+
+#label{
+  padding:15px;
+  background:white;
+  width:260px;
+  display:inline-block;
+  position:relative;
+  margin-left:50px;
+}
+input[type="submit"]{
+width: 25%;
+  padding: 15px;
+  color: black;
+  font-size: 20px;
+  background-color: #d3d3d3; /* 背景色 */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* 薄い影 */
+}
+
+#hensyuu{
+	width: 100%;
+	 font-size: 30px;
+}
+table{
+	text-align: center;
+  margin-right: auto;
+  margin-bottom: 30px;
+margin-left : auto;
+margin-top: 20px;
+  max-width: 1000px;	
+}
+
+table tr td{
+	width: 500px;
+}
+
+.box{
+	padding: 3em 1em;
+	margin: 2em 0;
+	font-weight: bold;
+	border: solid 2px #fff;
+	width: 1200px;
+	transition: all .6s ease;
+	margin-right: auto;
+	margin-left : auto;
+	margin-bottom: 100px;
+	background-color: #d3d3d3;
+	border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+	border-right-color: rgba(255, 255, 255, 0.2);
+	border-bottom-color: rgba(255, 255, 255, 0.2);
+	border-radius: 15px;
+	-webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+	backdrop-filter: blur(20px);
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* 薄い影 */
+}

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+   background-image: url(bg3.png);
+   background-attachment: fixed;
+   height: 100%; 
+   width:600px;
+margin-right: auto;
+margin-left : auto;
+margin-bottom: auto;
+text-align: center;
+}
+h1{
+text-align: center;
+color: black;
+padding-top: 70px;
+}
+h2{
+color: black;	
+}
+input[type="submit"]{
+width: 50%;
+  padding: 15px;
+  color: black;
+  font-size: 20px;
+  background-color: #d3d3d3; /* 背景色 */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* 薄い影 */
+}
+.box{
+	padding: 3em 1em;
+	margin: 2em 0;
+	font-weight: bold;
+	border: solid 2px #fff;
+	width: 30em;
+	transition: all .6s ease;
+	margin-right: auto;
+	margin-left : auto;
+	margin-bottom: 100px;
+	background-color: #d3d3d3;
+	border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+	border-right-color: rgba(255, 255, 255, 0.2);
+	border-bottom-color: rgba(255, 255, 255, 0.2);
+	border-radius: 15px;
+	-webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+	backdrop-filter: blur(20px);
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* 薄い影 */
+}
+
+#td{
+	width: 100px;
+}

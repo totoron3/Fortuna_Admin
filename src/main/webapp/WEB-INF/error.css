@@ -1,0 +1,592 @@
+@charset "UTF-8";
+
+@keyframes bgcolor {
+        0% { background-color: #aeff00; }
+        50% { background-color: #ffae00; }
+        75% { background-color: #ff008a; }
+        100% { background-color: #aeff00; }
+    }
+ 
+    body {
+        background-color: #aeff00;
+        width: 500px;
+        height: 200px;
+        animation: bgcolor 1s infinite;
+    }
+    
+.container{
+	display:flex;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  width:100%;
+  height:300px;
+  overflow: hidden;
+}
+
+.stars{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100%;
+  height:100%;
+}
+
+.stars span{
+  position:relative;
+}
+
+.stars span:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  
+  /*星のサイズ調節*/
+  transform:scale(0.20);
+}
+
+.stars span.s:before{
+  
+   /*20px 20pxが中央*/
+  box-shadow: 20px 20px #FFFFFF;
+}
+
+.stars span.m:before{
+  box-shadow: 
+    /*1段目*/
+    20px 10px #FFF176,
+    /*2段目*/
+    10px 20px #FFF176,
+    20px 20px #FFFFFF,
+    30px 20px #FFF176,
+    /*3段目*/
+    20px 30px #FFF176;
+}
+
+.stars span.l:before{
+  box-shadow: 
+    /*0段目*/
+    20px  0px #FDD835,
+    /*1段目*/
+    20px 10px #FFF176,
+    /*2段目*/
+     0px 20px #FDD835,
+    10px 20px #FFF176,
+    20px 20px #FFFFFF,
+    30px 20px #FFF176,
+    40px 20px #FDD835,
+    /*3段目*/
+    20px 30px #FFF176,
+    /*4段目*/
+    20px 40px #FDD835;
+}
+
+
+ /*
+星の位置とアニメーション指定
+最初の秒はアニメーション時間、2つ目は開始までの時間
+*/
+.stars span:nth-child(1){left:10%; top:10%; animation: star-anim 8s 0s infinite;}
+.stars span:nth-child(2){left:80%; top:20%; animation: star-anim 6s 1s infinite;}
+.stars span:nth-child(3){left:60%; top:40%; animation: star-anim 5s 2s infinite;}
+.stars span:nth-child(4){left:20%; top:70%; animation: star-anim 7s 3s infinite;}
+.stars span:nth-child(5){left:80%; top:80%; animation: star-anim 7s 4s infinite;}
+
+.stars span:nth-child(6){left:40%; top:10%; animation: star-anim 4s 0s infinite;}
+.stars span:nth-child(7){left:10%; top:50%; animation: star-anim 7s 1s infinite;}
+.stars span:nth-child(8){left:50%; top:50%; animation: star-anim 8s 2s infinite;}
+.stars span:nth-child(9){left:90%; top:90%; animation: star-anim 5s 3s infinite;}
+.stars span:nth-child(10){left:80%; top:50%; animation: star-anim 7s 4s infinite;}
+
+.stars span:nth-child(11){left:90%; top:10%; animation: star-anim 5s 0s infinite;}
+.stars span:nth-child(12){left:10%; top:80%; animation: star-anim 6s 1s infinite;}
+.stars span:nth-child(13){left:30%; top:20%; animation: star-anim 7s 2s infinite;}
+.stars span:nth-child(14){left:60%; top:90%; animation: star-anim 8s 3s infinite;}
+.stars span:nth-child(15){left:80%; top:50%; animation: star-anim 7s 4s infinite;}
+
+/*アニメーションキーフレーム*/
+@keyframes star-anim {
+  0% {opacity:0;}
+  5% {opacity:1;}
+  10% {opacity:0;}
+  55% {opacity:0;}
+  60% {opacity:1;}
+  95% {opacity:0;}
+  100% {opacity:1;}
+}
+
+/*フォント*/
+.bound span{
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 50px;
+  margin: auto;
+  font-size:5em;
+  font-weight:bold;
+  text-align:center;
+  width:100px;
+  height:100px;
+  
+}
+
+
+/*アニメーション指定
+文字数に合わせてleftや開始時間（2つ目のs）を設定する*/
+.bound span:nth-child(1){ left:-4.2em; animation: bound-anim 0.8s 0.0s infinite;}
+.bound span:nth-child(2){ left:-2.8em; animation: bound-anim 0.8s 0.1s infinite;}
+.bound span:nth-child(3){ left:-1.4em; animation: bound-anim 0.8s 0.2s infinite;}
+
+.bound span:nth-child(4){ left: 0.0em; animation: bound-anim 0.8s 0.3s infinite;}
+
+.bound span:nth-child(5){ left: 1.4em; animation: bound-anim 0.8s 0.4s infinite;}
+
+.bound span:nth-child(6){ left: 2.8em; animation: bound-anim 0.8s 0.5s infinite;}
+
+.bound span:nth-child(7){ left: 4.2em; animation: bound-anim 0.8s 0.6s infinite;}
+
+
+/*アニメーションキーフレーム
+小さいフォントサイズの場合はtopの数値も縮小すると飛び過ぎない*/
+@keyframes bound-anim {
+  0%,100% {top: 0;transform: scale(1);}
+  30% {top: -25%;}
+  50% {transform: scale(1);}
+  90% {top: 0;transform: scale(1.2,0.8);}
+}
+
+.text{
+  font-size:20px;
+  animation: flowing 0.5s linear infinite;
+  transform: translateX(100%);/*初期位置*/
+}
+
+@keyframes flowing {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.ball{
+  animation: ball 0.05s alternate infinite;
+  -webkit-animation: ball 0.05s alternate infinite;
+  -moz-animation: ball 0.05s alternate infinite;
+}
+@keyframes ball{
+  0%   { transform:translate(0%, 0%) rotateX(25deg); }
+  100% { transform:translate(0%, -60px); }
+}
+@-webkit-keyframes ball{
+  0%   { -webkit-transform:translate(0%, 0%) rotateX(25deg); }
+  100% { -webkit-transform:translate(0%, -60px); }
+}
+
+@-moz-keyframes ball{
+  0%   { -moz-transform:translate(0%, 0%) rotateX(25deg); }
+  100% { -moz-transform:translate(0%, -60px); }
+}
+ html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.w {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.w-body {
+  animation: 1.3s ease-in-out infinite alternate bodyStep;
+  background-color: #eb486b;
+  border-radius: 50%;
+  height: 160px;
+  overflow: hidden;
+  margin: -80px 0 0 -80px;
+  position: absolute;
+  text-align: center;
+  width: 160px;
+  white-space: nowrap;
+}
+
+  .w-body-skin,
+  .w-body-skin::before,
+  .w-body-skin::after {
+    background-color: #e7ddb6;
+    border-radius: 50%;
+    display: block;
+    height: 85px;
+    width: 85px;
+  }
+  .w-body-skin {
+    animation: 0.07s ease-in-out infinite alternate skinShake;
+    margin: -20px auto 0;
+  }
+    .w-body-skin::before,
+    .w-body-skin::after {
+      border-radius: 0 0 50% 50%;
+      content: '';
+      transform: translateY(20px);
+    }
+    .w-body-skin::before {
+      margin-left: -90px;
+    }
+    .w-body-skin::after {
+      margin: -85px 0 0 90px;
+    }
+
+  .w-body-nipples,
+  .w-body-nipples::after {
+    background-color: #f5978e;
+    border-radius: 50%;
+    display: block;
+    height: 10px;
+    position: relative;
+    width: 10px;
+  }
+    .w-body-nipples::after {
+      content: '';
+      margin-left: 56px;
+      transform: translateY(0);
+    }
+  .w-body-nipples {
+    animation: 0.07s ease-in-out infinite alternate nipplesShake;
+  }
+
+  .w-head,
+  .w-head::before {
+    background-color: #e7ddb6;
+    display: block;
+    height: 30px;
+    margin: -106px 0 0 -17px;
+    position: absolute;
+    width: 34px;
+    z-index: 1;
+  }
+    .w-head {
+      animation: 1.3s ease-in-out infinite alternate bodyStep;
+    }
+    .w-head::before {
+      background-color: #eb486b;
+      border-radius: 50% 50% 0 0;
+      content: '';
+      height: 40px;
+      margin: -27px 0 0;
+    }
+
+  .w-eye {
+    background-color: #772436;
+    border: 2px solid #e7ddb6;
+    border-radius: 0 8px 6px 70%;
+    display: block;
+    height: 8px;
+    margin: -11px 0 0 1px;
+    position: absolute;
+    width: 11px;
+    z-index: 1;
+  }
+    .w-eye::after {
+      background-color: #e7ddb6;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: 5px;
+      margin: 1px 0 0 4px;
+      width: 5px;
+    }
+    .w-eye_right {
+      margin-left: 18px;
+      transform: scaleX(-1);
+    }
+
+  .w-arm {
+    animation: 1.3s ease-in-out infinite alternate bodyStep;
+    margin: -63px 0 0 -80px;
+    position: absolute;
+  }
+    .w-arm_right {
+      animation: 1.3s ease-in-out infinite alternate bodyStepMirror;
+      margin-left: 80px;
+    }
+    .w-arm::before {
+      animation: 0.07s ease-in-out infinite alternate armShake;
+      border-radius: 30px 30px 0 0;
+      background-color: #d8cca7;
+      content: '';
+      height: 80px;
+      margin: -10px 0 0 -22px;
+      position: absolute;
+      transform: rotate(31deg);
+      transform-origin: bottom;
+      width: 50px;
+    }
+    .w-arm_right::before {
+      animation-delay: 0.07s;
+    }
+    .w-arm::after {
+      content: '';
+      background-color: #e7ddb6;
+      border-radius: 3px 0 30px 30px;
+      height: 85px;
+      margin: 54px 0 0 -55px;
+      position: absolute;
+      transform: rotate(49deg);
+      width: 50px;
+    }
+
+  .w-leg {
+    animation: 1.3s ease-in infinite alternate legShift;
+    margin: 49px 0 0 -52px;
+    position: absolute;
+  }
+    .w-leg-top {
+      animation: 1.3s ease-in infinite alternate legTop;
+      background-color: #e7ddb6;
+      height: 50px;
+      position: absolute;
+      width: 45px;
+    }
+    .w-leg-bottom {
+      animation: 1.3s ease-in infinite alternate legBottom;
+      background-color: #eb486b;
+      height: 70px;
+      margin: 40px 0 0 0px;
+      position: absolute;
+      width: 45px;
+    }
+    .w-leg-bottom::before {
+      animation: 1.3s ease-in infinite alternate bootsBackground;
+      background-color: #eb486b;
+      border-radius: 50% 0 0 0;
+      content: '';
+      height: 10px;
+      margin: 60px 0 0 -20px;
+      position: absolute;
+      width: 20px;
+    }
+    .w-leg_right {
+      animation: 1.3s ease-in -1.3s infinite alternate legShiftScale;
+      margin-left: 52px;
+      transform: scaleX(-1);
+    }
+      .w-leg_right .w-leg-top,
+      .w-leg_right .w-leg-bottom,
+      .w-leg_right .w-leg-bottom::before {
+        animation-delay: 1.3s;
+      }
+
+.w-shoelace,
+.w-shoelace::after {
+  background-color: yellow;
+  border-radius: 2px;
+  height: 2px;
+  margin: 15px 0 0 1px;
+  transform: rotate(45deg);
+  width: 12px;
+}
+  .w-shoelace::after {
+    content: '';
+    margin: 0;
+    position:absolute;
+    transform: rotate(90deg);
+  }
+.w-heel {
+  bottom: 0;
+  height: 20px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 20px;
+}
+  .w-heel::after {
+    background-color: yellow;
+    border-radius: 50%;
+    content: '';
+    height: 40px;
+    position: absolute;
+    width: 40px;
+  }
+@keyframes legShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(0, -20px);
+  }
+  90% {
+    transform: translate(20px, 0);
+  }
+  100% {
+    transform: translate(20px, 0);
+  }
+}
+
+@keyframes legShiftScale {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
+    z-index: 0;
+  }
+  50% {
+    transform: translate(0, 0) scaleX(-1);
+    z-index: 0;
+  }
+  75% {
+    transform: translate(0, -20px) scaleX(-1);
+    z-index: 0;
+  }
+  90% {
+    transform: translate(-20px, 0) scaleX(-1);
+    z-index: -1;
+  }
+  100% {
+    transform: translate(-20px, 0) scaleX(-1);
+    z-index: -1;
+  }
+}
+
+@keyframes legTop {
+  0% {
+    background-color: #e7ddb6;
+    transform: rotate(0deg);
+  }
+  50% {
+    background-color: #e7ddb6;
+    transform: rotate(0deg);
+  }
+  75% {
+    background-color: #e7ddb6;
+    transform: rotate(30deg);
+  }
+  90% {
+    background-color: #b8b092;
+    transform: rotate(0deg);
+  }
+  100% {
+    background-color: #b8b092;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes legBottom {
+  0% {
+    background-color: #eb486b;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  50% {
+    background-color: #eb486b;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  75% {
+    background-color: #eb486b;
+    transform: translate(0px, -15px) rotate(-20deg);
+  }
+  90% {
+    background-color: #ba3b56;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  100% {
+    background-color: #ba3b56;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+}
+
+@keyframes bootsBackground {
+  0% {
+    background-color: #eb486b;
+  }
+  75% {
+    background-color: #eb486b;
+  }
+  90% {
+    background-color: #ba3b56;
+  }
+  100% {
+    background-color: #ba3b56;
+  }
+}
+
+@keyframes bodyStep {
+  0% {
+    transform: translate3d(-22px, 0, 0);
+  }
+  2% {
+    transform: translate3d(-22px, 0, 0);
+  }
+  25% {
+    transform: translate3d(-11px, -15px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(11px, -15px, 0);
+  }
+  98% {
+    transform: translate3d(22px, 0, 0);
+  }
+  100% {
+    transform: translate3d(22px, 0, 0);
+  }
+}
+
+@keyframes bodyStepMirror {
+  0% {
+    transform: translate3d(-22px, 0, 0) scaleX(-1);
+  }
+  25% {
+    transform: translate3d(-11px, -15px, 0) scaleX(-1);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) scaleX(-1);
+  }
+  75% {
+    transform: translate3d(11px, -15px, 0) scaleX(-1);
+  }
+  100% {
+    transform: translate3d(22px, 0, 0) scaleX(-1);
+  }
+}
+
+@keyframes skinShake {
+  from {
+    transform: translateX(-3px);
+  }
+  to {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes nipplesShake {
+  from {
+    transform: translate(44px, -25px);
+  }
+  to {
+    transform: translate(50px, -25px);
+  }
+}
+
+@keyframes armShake {
+  from {
+    transform: rotate(28deg);
+  }
+  to {
+    transform: rotate(32deg);
+  }
+}
+.LinkedIn,
+.LinkedIn:visited {
+  bottom: .25em;
+  color: #e7ddb6;
+  position: absolute;
+  right: .25em;
+}
+.LinkedIn:hover {
+  color: white;
+}
